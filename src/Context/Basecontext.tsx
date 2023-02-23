@@ -2,7 +2,9 @@ import { useReducer,createContext } from "react";
 import { BaseReducer } from "./BaseReducer";
 
 const INNITIAL_STATE = {
-    wallet:null
+    walletAddress:null,
+    walletConnected:false,
+    user:null
 }
 
 export const Basecontext = createContext(undefined);

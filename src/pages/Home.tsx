@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import ConnetWallet from '../components/ConnetWallet';
+import ConnectWallet from '../components/ConnectWallet';
 import { Basecontext } from '../Context/Basecontext'
 
 const Home = () => {
@@ -9,8 +9,9 @@ const Home = () => {
   // console.log(state.user)
 
   return (
-    // <div>{state.user}</div>
-    <ConnetWallet />
+    <div>
+      sjkdhf
+    </div>
   )
 }
 
