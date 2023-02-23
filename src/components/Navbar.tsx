@@ -27,7 +27,7 @@ const Navbar = () => {
         }
         >Skill Up</div>
         {
-            state.user === null ? (
+            state.walletAddress === null ? (
                 <div className='flex justify-center items-center gap-4'>
                     <button className='text-md text-white font-bold cursor-pointer'
                     onClick={Login}

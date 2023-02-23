@@ -19,9 +19,9 @@ const ConnectWallet = () => {
                 const acc = await window.ethereum.request({
                     method:"eth_requestAccounts",
                 })
-                dispatch({type:"SET_ADDRESS",payload:acc})
+                dispatch({type:"SET_WALLET_ADDRESS",payload:acc})
                 dispatch({type:"SET_WALLET_CONNECTED",payload:false})
-                navigate("/dashboard")
+                navigate('/dashboard')
             } catch (err) {
                 alert(err)
             }
