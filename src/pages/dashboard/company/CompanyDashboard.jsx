@@ -31,7 +31,6 @@ const CompanyDashboard = () => {
   const handleCreateCertificate = () => {
     // console.log("create certificate")
     setToggle(!toggle)
-    navigate('/company/createcertificate')
   }
   
   return (
