@@ -21,7 +21,7 @@ const ConnectWallet = () => {
                 })
                 dispatch({type:"SET_WALLET_ADDRESS",payload:acc})
                 dispatch({type:"SET_WALLET_CONNECTED",payload:false})
-                navigate('/dashboard')
+                navigate('/login')
             } catch (err) {
                 alert(err)
             }

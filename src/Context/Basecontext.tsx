@@ -4,7 +4,9 @@ import { BaseReducer } from "./BaseReducer";
 const INNITIAL_STATE = {
     walletAddress:null,
     walletConnected:false,
-    user:null
+    user:null,
+    userAccessToken:null,
+    companyAccessToken:null
 }
 
 export const Basecontext = createContext(undefined);

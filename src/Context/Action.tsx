@@ -10,3 +10,8 @@ export const SetWalletConnected = (toggle :any) => ({
     type:ACTION_TYPES.SET_WALLET_CONNECTED,
     payload:toggle
 })
+
+export const SetUserAccessToken = (token) => ({
+    type:ACTION_TYPES.SET_ACCESS_TOKEN,
+    payload:token
+})

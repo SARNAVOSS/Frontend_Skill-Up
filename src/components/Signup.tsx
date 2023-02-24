@@ -5,7 +5,6 @@ const Signup = () => {
     const navigate = useNavigate()
 
     const Logincompany = () => {
-        console.log("sadfgkgh")
         navigate('/signup/companysignup')
     }
 
