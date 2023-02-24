@@ -45,12 +45,12 @@ const RegisterUser = () => {
     e.preventDefault()
     // setConnectWallet(!connectWallet)
     setLoading(!loading)
-    // console.log("connecting wallet")
+    console.log("connecting wallet")
     await Wallet();
-    // console.log(state.walletAddress)
+    console.log(address)
     const res = await registerUser(name,email,username,password,phone,address);
     if(!res.data.error){
-      alert(res.data.message)
+      // alert(res.data.message)
       // dispatch({type:"SET_USER_ACCESS_TOKEN",payload:res.token}) 
       setLoading(!loading)
       navigate('/login/userlogin')

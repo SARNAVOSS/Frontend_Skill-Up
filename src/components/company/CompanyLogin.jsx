@@ -17,10 +17,11 @@ const CompanyLogin = () => {
 
   const handleLoginCompany = async(e) => {
     e.preventDefault()
-
+    setLoading(!loading)
     const res = await loginCompany(email,phone,password)
-    console.log(res)
-
+    // console.log(res)
+    setLoading(!loading)
+    
     if(!res.data.error){
       // alert(res.data.message);
       localStorage.setItem('accessToken',res.token)

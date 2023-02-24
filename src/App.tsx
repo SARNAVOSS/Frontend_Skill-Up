@@ -4,13 +4,14 @@ import { SkillTestBlock } from "./components"
 import CertificateItem from "./components/company/CertificateItem"
 import CompanyLogin from "./components/company/CompanyLogin"
 import RegisterCompany from "./components/company/RegisterCompany"
+import CreateSkillTest from "./components/CreateSkillTest"
 import Login from "./components/Login"
 import Navbar from "./components/Navbar"
 import Signup from "./components/Signup"
 import RegisterUser from "./components/user/RegisterUser"
 import UserLogin from "./components/user/UserLogin"
 import { Basecontext } from "./Context/Basecontext"
-import { Skillpage, UserDashboard, UserProfile } from "./pages"
+import { SkillPage, Skillpage, UserDashboard, UserProfile } from "./pages"
 import CompanyDashboard from "./pages/dashboard/company/CompanyDashboard"
 import CompanyProfile from "./pages/dashboard/company/CompanyProfile"
 import Home from "./pages/Home"
@@ -39,6 +40,9 @@ function App() {
         <Route path="/user/skilltest" element={<Skillpage />} />
         <Route path="/company/dashboard" element={localStorage.getItem('client') === 'company' ? <CompanyDashboard /> : <ErrorComponent />} />
         <Route path="/company/profile" element={localStorage.getItem('client') ? <CompanyProfile /> : <ErrorComponent />} />
+        <Route path="/user/skill/:id" element={<SkillPage />} />
+        <Route path="/company/createcertificate" element={<CreateSkillTest />} />
+        <Route path="/company/questions" element={<SkillTestBlock />} />
       </Routes>
     </div>
   )

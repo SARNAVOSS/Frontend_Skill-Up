@@ -1,4 +1,4 @@
-import axios, { AxiosHeaders } from 'axios';
+import axios from 'axios';
 
 const registerUser = async (name,email,user_name,password,phone,eth_address) => {
   try {
