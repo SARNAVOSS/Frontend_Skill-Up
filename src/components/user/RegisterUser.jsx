@@ -2,6 +2,8 @@ import React,{useContext, useState} from 'react'
 import { Basecontext } from '../../Context/Basecontext'
 import ConnectWallet from '../ConnectWallet'
 import { useNavigate } from 'react-router-dom'
+import Loader from '../../utils/Loader'
+
 
 import {registerUser} from '../../api/'
 
@@ -29,7 +31,7 @@ const RegisterUser = () => {
                     method:"eth_requestAccounts",
                 })
                 dispatch({type:"SET_WALLET_ADDRESS",payload:acc})
-                // setAddress(acc)
+                setAddress(acc)
                 // dispatch({type:"SET_WALLET_CONNECTED",payload:false})
             } catch (err) {
                 alert(err)
@@ -42,17 +44,18 @@ const RegisterUser = () => {
   const handleRegister = async(e) => {
     e.preventDefault()
     // setConnectWallet(!connectWallet)
-
+    setLoading(!loading)
     // console.log("connecting wallet")
     await Wallet();
     // console.log(state.walletAddress)
-    const res = await registerUser(name,email,username,password,phone,state.walletAddress);
-    if(!res.error){
-      alert(res.message)
+    const res = await registerUser(name,email,username,password,phone,address);
+    if(!res.data.error){
+      alert(res.data.message)
       // dispatch({type:"SET_USER_ACCESS_TOKEN",payload:res.token}) 
+      setLoading(!loading)
       navigate('/login/userlogin')
     }else {
-      alert(res.message)
+      alert(res.data.message)
     }
     console.log(res)
     
@@ -97,9 +100,12 @@ const RegisterUser = () => {
             }}
              />
           </div>
-            <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 py-3 px-10 rounded-lg text-lg font-semibold text-gray-900 w-[70%]'
-            onClick={() => dispatch({type:'SET_WALLET_CONNECTED', payload: true})}
-            >SignUp</button>
+          {
+            loading? <Loader /> : (
+          <button className='bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 py-3 px-10 rounded-lg text-lg font-semibold text-gray-900 w-[70%]'
+          >SignUp</button>
+            )
+          }
         </form>
  </div>
   )

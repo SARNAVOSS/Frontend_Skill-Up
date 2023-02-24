@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosHeaders } from 'axios';
 
 const registerUser = async (name,email,user_name,password,phone,eth_address) => {
   try {
@@ -10,29 +10,46 @@ const registerUser = async (name,email,user_name,password,phone,eth_address) => 
         password,
         phone,
         eth_address
+      },{
+        headers:{
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        },
       }
     );
     
     return response;
   } catch (error) {
-    return error;
+        return {
+          error:true,
+          message:error.message
+        }
   }
 }
 
-const loginUser = async (email,phone,password) => {
+const loginUser = async (name,email,password) => {
     try {
         
         const response = await axios.post(
             'https://skillup-api.vercel.app/user/login',{
                 email,
-                phone,
+                name,
                 password
+            },{
+            headers:{
+                    'Access-Control-Allow-Origin': '*',
+                    'Content-Type': 'application/json',
+                    },
             }
         )
 
         return response;
     } catch (error) {
-        return error
+      console.log(error)
+        return {
+          error:true,
+          message:error.message
+        }
     }
 }
 

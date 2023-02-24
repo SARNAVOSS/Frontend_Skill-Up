@@ -9,12 +9,20 @@ const registerCompany = async (name,email,company,password,phone) => {
         company,
         password,
         phone,
+      },{
+        headers:{
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        },
       }
     );
     
     return response;
   } catch (error) {
-    return error;
+        return {
+          error:true,
+          message:error.message
+        }
   }
 }
 
@@ -26,12 +34,20 @@ const loginCompany = async (email,phone,password) => {
                 email,
                 phone,
                 password
+            },{
+        headers:{
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+        },
             }
         )
 
         return response;
     } catch (error) {
-        return error
+        return {
+          error:true,
+          message:error.message
+        }
     }
 }
 

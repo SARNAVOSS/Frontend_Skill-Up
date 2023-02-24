@@ -10,6 +10,11 @@ export const BaseReducer = (state: any, action: any) => {
                 ...state,
                 userAccessToken:action.payload
             });
+        case "SET_USER":
+            return({
+                ...state,
+                user:action.payload
+            });
         case "SET_COMPANY_ACCESS_TOKEN":
             return({
                 ...state,

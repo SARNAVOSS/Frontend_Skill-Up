@@ -1,10 +1,13 @@
 import React from 'react'
 import UserCertificate from '../../../components/user/UserCertificate'
+import { useNavigate } from 'react-router-dom'
 
 const UserDashboard = () => {
 
+  const navigate = useNavigate()
+
   const handleSkillTest = () => {
-    console.log('skill test')
+    navigate('/user/skilltest')
   }
   
   return (
