@@ -6,7 +6,8 @@ const INNITIAL_STATE = {
     walletConnected:false,
     user:null,
     userAccessToken:null,
-    companyAccessToken:null
+    companyAccessToken:null,
+    profileTab:"Education"
 }
 
 export const Basecontext = createContext(undefined);

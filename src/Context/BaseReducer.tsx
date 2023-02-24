@@ -19,7 +19,12 @@ export const BaseReducer = (state: any, action: any) => {
             return({
                 ...state,
                 walletConnected:action.payload
-            })
+            });
+        case "SET_PROFILE_TAB_OPTION":
+            return({
+                ...state,
+                profileTab:action.payload
+            });
         default:
             return state;
     }

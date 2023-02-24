@@ -20,3 +20,8 @@ export const SetCompanyAccessToken = (token) => ({
     type:ACTION_TYPES.SET_COMPANY_ACCESS_TOKEN,
     payload:token
 })
+
+export const SetProfileTabOption = (option) => ({
+    type:ACTION_TYPES.SET_PROFILE_TAB_OPTION,
+    payload:option
+})
