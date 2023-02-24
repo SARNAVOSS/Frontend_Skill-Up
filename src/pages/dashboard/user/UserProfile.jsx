@@ -9,11 +9,11 @@ const UserProfile = () => {
     const {state,dispatch} = useContext(Basecontext)
     
   return (
-    <div className='h-[90%] w-full flex justify-start items-center bg-bg-primary gap-4 flex-col py-5 px-5'>
-        <div className='w-40 h-40 rounded-full'>
+    <div className='h-[90%] w-full flex justify-start items-center bg-bg-primary gap-4 flex-col py-5 px-5 border-red-500 border-2'>
+        <div className='w-40 h-40 rounded-full flex-2'>
             <img src={profileImg} alt="ProfileImg" className='w-full h-full rounded-full object-cover'/>
         </div>
-        <div className='w-full flex px-5 py-10 gap-6'>
+        <div className='w-full flex-1 flex px-5 py-10 gap-6 border-red-500 border-2'>
             <div className='flex-2'>
                 <ul className='text-lg text-white font-serif flex flex-col justify-start gap-4'>
                     <li className='cursor-pointer py-2 px-5'
@@ -27,7 +27,7 @@ const UserProfile = () => {
                     >Projects</li>
                 </ul>
             </div>
-            <div className='flex-1'>
+            <div className='flex-1 border-red-500 border-2 overflow-y-scroll scrollbar-thin scrollbar-track-slate-900'>
                 {
                     state.profileTab === "Education" ? <Education /> : <Skill />
                 }

@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import { Route,Routes } from "react-router-dom"
+import { SkillTestBlock } from "./components"
 import CompanyLogin from "./components/company/CompanyLogin"
 import RegisterCompany from "./components/company/RegisterCompany"
 import Login from "./components/Login"
@@ -8,7 +9,7 @@ import Signup from "./components/Signup"
 import RegisterUser from "./components/user/RegisterUser"
 import UserLogin from "./components/user/UserLogin"
 import { Basecontext } from "./Context/Basecontext"
-import { UserDashboard, UserProfile } from "./pages"
+import { Skillpage, UserDashboard, UserProfile } from "./pages"
 import Home from "./pages/Home"
 import Landing from "./pages/Landing"
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="w-screen h-screen">
       {/* <UserCertificate /> */}
+      {/* <SkillTestBlock /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -32,6 +34,7 @@ function App() {
         <Route path="/signup/usersignup" element={<RegisterUser />} />
         <Route path="/user/dashboard" element={<UserDashboard />} />
         <Route path="/user/profile" element={<UserProfile />} />
+        <Route path="/user/skilltest" element={<Skillpage />} />
       </Routes>
     </div>
   )
