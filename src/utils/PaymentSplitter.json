@@ -77,11 +77,6 @@
     "inputs": [
       {
         "type": "address",
-        "name": "sender",
-        "internalType": "address payable"
-      },
-      {
-        "type": "address",
         "name": "receiver",
         "internalType": "address payable"
       }
